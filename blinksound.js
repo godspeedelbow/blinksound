@@ -133,6 +133,17 @@
         };
     }
 
+    /*
+     * blinksound module has a single entry point that initializes the plugin
+     * the options object can contain:
+     * - `ogg`, `mp3`, `wav` urls to audio files that should be played. 
+     *   browser support is evaluated in that order. only the first supported audio file is loaded.
+     * - `debug` when set to truthy, will log debug statements with console.log
+     *
+     * Returns a function that takes one argument, `title` (String)
+     * when the function is called the title of the window/tab is blinked and the sound is played
+     * the function returns a boolean to indicate if it played
+     */
     return function(options) {
         options = options || {};
         debug = !!options.debug;
@@ -144,12 +155,13 @@
         return function (title) {
             if (checkUserActivity()) {
                 log('blinksound: user is active; playing sound nor blinking');
-                return;
+                return false;
             }
 
             log('blinksound: user is not active; playing sound and blinking');
             playSound();
             blinkTitle(title);
+            return true;
         };
     };
 }));

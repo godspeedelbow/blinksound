@@ -16,8 +16,11 @@
 
             setInterval(function() {
                 count++;
-                demo(count + ': ding dong!');
-                $('body').append('<p>ding dong! '+count+'</p>')
+                if (demo(count + ': ding dong!')) {
+                    $('body').append('<p>ding dong! '+count+'</p>')
+                } else {
+                    $('body').append('<p>did not do anything because the user is active: '+count+'</p>')
+                }
             }, 5000);
         </script>
     </body>
