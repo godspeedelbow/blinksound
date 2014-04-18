@@ -28,7 +28,7 @@ Optionally, a property `debug` can be included in the options. When set to true,
 The intialized module returns a function that can be called with one argument, title text.
 
 ```
-blinksound('New title');
+var blinkedAndSounded = blinksound('New title');
 ```
 
-The browser window/tab will play the provided sound once. It will blink until the title user focuses it.
+If the browser window/tab is active/focused, blink sound does not nothing and returns `false`. If it isn't active/focused, blinksound plays sound once, blink the title until the user focuses the window/tab and returns `true`.
