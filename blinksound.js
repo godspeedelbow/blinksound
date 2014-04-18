@@ -10,7 +10,7 @@
         define(['jquery'], factory);
     } else {
         // No AMD. Register plugin with global jQuery object.
-        factory($);
+        window.blinksound = factory($);
     }
 }(function ($) {
     var debug = false;
@@ -114,9 +114,11 @@
         var originalTitle;
 
         if (!$.titleAlert) {
+            log('blinksound: $.titleAlert not found, will not blink title');
             return noop;
         }
 
+        log('blinksound: $.titleAlert found, will blink title');
         originalTitle = document.title;
         return function(blinkTitle) {
             //in case this function get called while stile blinking
