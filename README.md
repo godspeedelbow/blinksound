@@ -10,10 +10,6 @@ Dependencies
 
 - HTML5 Audio (depends on the browser, no install required)
 
-- a logging module
-
-- require.js
-
 How to use
 ---------------
 
@@ -26,6 +22,8 @@ var blinksound = require('blinksound')({
     wav: '/path/to/mav-audio-file',
 });
 ```
+
+Optionally, a property `debug` can be included in the options. When set to true, the plugin will use `console.log` to log debug statements.
 
 The intialized module returns a function that can be called with one argument, title text.
 
