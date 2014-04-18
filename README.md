@@ -1,7 +1,7 @@
 blinksound
 ==========
 
-Easy API for focus the user on an inactive browser window/tab, through sound and title blinking.
+Easy API to focus the user on a background browser window/tab, through sound and title blinking.
 
 Dependencies
 --------------
