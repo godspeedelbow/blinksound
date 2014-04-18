@@ -13,7 +13,7 @@ Dependencies
 How to use
 ---------------
 
-Initialize the plugin with an `audioUrls` object that contains urls to audio files. You can provide different audio files for wider support. The plugin will try to see if the browser supports HTML5 Audio.
+Initialize the plugin with an options object that contains urls to audio files. You can provide different audio files for wider support. The plugin will try to see if the browser supports HTML5 Audio.
 
 ```
 var blinksound = require('blinksound')({
